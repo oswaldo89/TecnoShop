@@ -1,0 +1,26 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.shop.appshop.ActInicio">
+    <item
+        android:id="@+id/action_cart"
+        android:icon="@drawable/map"
+        android:orderInCategory="200"
+        android:title="Juego de Cartas"
+        app:showAsAction="ifRoom"></item>
+    <item
+        android:id="@+id/action_searchs"
+        android:icon="@drawable/search"
+        android:orderInCategory="200"
+        android:title="Buscar"
+        app:showAsAction="ifRoom"></item>
+
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/abc_ic_menu_moreoverflow_mtrl_alpha"
+        android:orderInCategory="200"
+        android:title="Buscar"
+        app:showAsAction="ifRoom"></item>
+
+
+</menu>

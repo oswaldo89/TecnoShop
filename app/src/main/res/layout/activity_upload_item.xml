@@ -1,0 +1,117 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.ogomez.tecnoshop.app.UploadItem">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/imgThumb"
+            android:layout_width="100sp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:adjustViewBounds="true"
+            android:src="@drawable/camera" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="10sp"
+        android:paddingTop="10sp"
+        android:text="Toca para agregar imagen" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin">
+
+
+        <EditText
+            android:nextFocusDown="@+id/spn_categoria"
+            android:singleLine="true"
+            android:id="@+id/txt_nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded"
+            android:hint="Nombre del producto"
+            android:padding="10sp" />
+
+        <Spinner
+            android:nextFocusDown="@+id/txt_descripcion"
+            android:id="@+id/spn_categoria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:background="@drawable/btn_dropdown"
+            android:entries="@array/categorias_arrays" />
+
+        <EditText
+            android:nextFocusDown="@+id/txt_precio"
+            android:singleLine="true"
+            android:id="@+id/txt_descripcion"
+            android:layout_width="match_parent"
+            android:layout_height="100sp"
+            android:layout_marginTop="10sp"
+            android:background="@drawable/rounded"
+            android:ems="10"
+            android:gravity="left|top"
+            android:hint="Agrega una breve descripcion"
+            android:padding="10sp"></EditText>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:nextFocusDown="@+id/txt_local"
+                android:singleLine="true"
+                android:id="@+id/txt_precio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5sp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded"
+                android:ems="10"
+                android:hint="Precio"
+                android:inputType="numberDecimal"
+                android:padding="10sp" />
+
+            <EditText
+                android:singleLine="true"
+                android:id="@+id/txt_local"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5sp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded"
+                android:ems="10"
+                android:hint="Local"
+                android:inputType="number"
+                android:padding="10sp" />
+        </LinearLayout>
+
+        <Button
+            android:stateListAnimator="@null"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Guardar"
+            android:id="@+id/btn_guardar" />
+    </LinearLayout>
+</LinearLayout>
