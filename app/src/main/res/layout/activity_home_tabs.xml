@@ -97,7 +97,7 @@
                     android:layout_height="wrap_content"
                     android:background="#00000000"
                     android:onClick="menuClick"
-                    android:src="@drawable/news"
+                    android:src="@drawable/ic_chat"
                     android:tag="News" />
 
                 <TextView
