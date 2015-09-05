@@ -1,4 +1,4 @@
-package com.ogomez.tecnoshop.app;
+package com.ogomez.tecnoshop.app.Activities;
 
 import android.content.Intent;
 import android.speech.RecognizerIntent;
@@ -10,6 +10,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.ogomez.tecnoshop.R;
 import com.quinny898.library.persistentsearch.SearchBox;
 import com.quinny898.library.persistentsearch.SearchResult;
 

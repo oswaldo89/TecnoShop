@@ -9,12 +9,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
 import com.ogomez.tecnoshop.app.Adapters.AdapterCategories;
-import com.ogomez.tecnoshop.app.HomeTabs;
-import com.ogomez.tecnoshop.app.R;
-import com.ogomez.tecnoshop.app.RestClient.Items;
+import com.ogomez.tecnoshop.app.Activities.HomeTabs;
+import com.ogomez.tecnoshop.R;
 
 import java.util.ArrayList;
 import java.util.List;

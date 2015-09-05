@@ -97,15 +97,15 @@
                     android:layout_height="wrap_content"
                     android:background="#00000000"
                     android:onClick="menuClick"
-                    android:src="@drawable/ic_chat"
-                    android:tag="News" />
+                    android:src="@drawable/chat"
+                    android:tag="Chat" />
 
                 <TextView
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:padding="5dp"
-                    android:text="News" />
+                    android:text="Chat" />
             </LinearLayout>
 
             <LinearLayout

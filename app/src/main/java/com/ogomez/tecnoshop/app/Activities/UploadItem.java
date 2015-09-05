@@ -1,4 +1,4 @@
-package com.ogomez.tecnoshop.app;
+package com.ogomez.tecnoshop.app.Activities;
 
 import android.app.Activity;
 import android.content.Context;
@@ -22,7 +22,6 @@ import android.widget.ImageView;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -30,12 +29,11 @@ import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.media.ExifInterface;
-import android.util.Log;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import com.ogomez.tecnoshop.app.Objects.ItemP;
+import com.ogomez.tecnoshop.R;
 import com.ogomez.tecnoshop.app.RestClient.Upload;
 
 public class UploadItem extends AppCompatActivity {

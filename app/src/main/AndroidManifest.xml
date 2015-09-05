@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ogomez.tecnoshop.app" >
+    package="com.ogomez.tecnoshop">
 
     <uses-feature
         android:name="android.hardware.camera"
@@ -13,9 +13,8 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/icon"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
@@ -24,8 +23,8 @@
             android:value="@string/facebook_app_id" />
 
         <activity
-            android:name=".Login"
-            android:label="@string/app_name" >
+            android:name=".app.Activities.Login"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,10 +32,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".HomeTabs"
+            android:name=".app.Activities.HomeTabs"
             android:label="@string/title_activity_home_tabs" />
         <activity
-            android:name=".ResultSearch"
+            android:name=".app.Activities.ResultSearch"
             android:label="@string/title_activity_reveal" />
         <activity
             android:name="com.facebook.FacebookActivity"
@@ -44,9 +43,8 @@
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
-            android:name=".UploadItem"
-            android:label="@string/title_activity_upload_item" >
-        </activity>
+            android:name=".app.Activities.UploadItem"
+            android:label="@string/title_activity_upload_item"></activity>
     </application>
 
 </manifest>

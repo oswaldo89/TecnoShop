@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.ogomez.tecnoshop.app.R;
+import com.ogomez.tecnoshop.R;
 
 import java.util.List;
 public class AdapterCategories extends RecyclerView.Adapter<AdapterCategories.CustomViewHolder> {

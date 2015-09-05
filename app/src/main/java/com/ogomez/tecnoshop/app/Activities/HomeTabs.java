@@ -1,15 +1,12 @@
-package com.ogomez.tecnoshop.app;
+package com.ogomez.tecnoshop.app.Activities;
 
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
-import android.os.Build;
 import android.os.Handler;
 import android.speech.RecognizerIntent;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -33,7 +30,7 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.plus.Plus;
 import com.ogomez.tecnoshop.app.Adapters.ViewPagerAdapter;
-import com.ogomez.tecnoshop.app.RestClient.Users;
+import com.ogomez.tecnoshop.R;
 import com.quinny898.library.persistentsearch.SearchBox;
 import java.util.ArrayList;
 
@@ -310,9 +307,12 @@ public class HomeTabs extends AppCompatActivity implements GoogleApiClient.Conne
             editor.commit();
 
             callFacebookLogout(HomeTabs.this);
-
         }
-        //Toast.makeText(this, view.getTag() + " Clicked", Toast.LENGTH_LONG).show();
+
+        if(view.getTag().toString().equals("Chat"))
+        {
+            Snackbar.make(findViewById(android.R.id.content), "Chat no se encuentra disponible aun", Snackbar.LENGTH_LONG).show();
+        }
     }
 
     @Override

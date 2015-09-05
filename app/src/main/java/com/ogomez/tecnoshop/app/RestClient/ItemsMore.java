@@ -1,9 +1,7 @@
 package com.ogomez.tecnoshop.app.RestClient;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.ProgressDialog;
-import android.widget.ListView;
+import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -22,10 +20,10 @@ import java.util.List;
 /**
  * Created by Oswaldo Gomez on 26/07/2015.
  */
-public class Items {
+public class ItemsMore {
     private static final String BASE_URL = "http://www.ogomez.com.mx/t_api/Items";
     public static AsyncHttpClient client = new AsyncHttpClient();
-    public static AdapterItems adpt;
+
     public static void getAll(final Activity act, final SuperListview mRecyclerView) {
 
         client.get(getAbsoluteUrl("/getAll"), new AsyncHttpResponseHandler() {
@@ -37,21 +35,21 @@ public class Items {
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] response) {
+                mRecyclerView.hideMoreProgress();
                 try {
-
 
                     json_resp = Utils.byteToJson(response);
                     Gson gson = new Gson();
 
-                    Type listType = new TypeToken<List<ItemP>>() {
-                    }.getType();
+                    Type listType = new TypeToken<List<ItemP>>() {}.getType();
                     List<ItemP> posts = (List<ItemP>) gson.fromJson(json_resp, listType);
 
+                    AdapterItems adapter = (AdapterItems) mRecyclerView.getAdapter();
+                    for (int i = 0; i <= 10; i++) {
+                        adapter.add(posts.get(i));
+                    }
+                    adapter.notifyDataSetChanged();
 
-                    // Limpiar elementos antiguos
-                    adpt = new AdapterItems(act, posts);
-                    mRecyclerView.setAdapter(adpt);
-                    adpt.notifyDataSetChanged();
 
                 } catch (Exception e) {
                     //Log.e("REST", e.getMessage());

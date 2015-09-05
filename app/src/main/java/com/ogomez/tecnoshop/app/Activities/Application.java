@@ -1,4 +1,4 @@
-package com.ogomez.tecnoshop.app;
+package com.ogomez.tecnoshop.app.Activities;
 
 
 /**

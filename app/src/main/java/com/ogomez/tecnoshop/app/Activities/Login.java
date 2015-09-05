@@ -1,4 +1,4 @@
-package com.ogomez.tecnoshop.app;
+package com.ogomez.tecnoshop.app.Activities;
 
 import android.app.Activity;
 import android.content.Context;
@@ -27,6 +27,7 @@ import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.plus.Plus;
+import com.ogomez.tecnoshop.R;
 import com.ogomez.tecnoshop.app.RestClient.Users;
 
 
