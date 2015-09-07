@@ -3,13 +3,17 @@ package com.ogomez.tecnoshop.app.Fragments;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.Toast;
 
 import com.melnykov.fab.FloatingActionButton;
 import com.ogomez.tecnoshop.R;
+import com.ogomez.tecnoshop.app.Activities.DetailScreen;
 import com.ogomez.tecnoshop.app.Activities.HomeTabs;
 import com.ogomez.tecnoshop.app.Activities.UploadItem;
 import com.ogomez.tecnoshop.app.Adapters.AdapterItems;
@@ -22,7 +26,6 @@ import com.quentindommerc.superlistview.SuperListview;
 public class UltimosFragment extends android.support.v4.app.Fragment {
 
     private SuperListview listview;
-    AdapterItems adapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -31,6 +34,31 @@ public class UltimosFragment extends android.support.v4.app.Fragment {
 
         // Initialize recycler view
         listview = (SuperListview) root.findViewById(R.id.recycler_view);
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
+                AdapterItems adpt = (AdapterItems) listview.getAdapter();
+                int _id = adpt.getItem(i).getId();
+                String _nombre = adpt.getItem(i).getNombre();
+                String _categoria = adpt.getItem(i).getCategoria();
+                String _descripcion = adpt.getItem(i).getDescripcion();
+                String _path = adpt.getItem(i).getPath();
+                double _precio = adpt.getItem(i).getPrecio();
+                int _local = adpt.getItem(i).getLocal();
+
+
+                Intent intent = new Intent(getActivity(), DetailScreen.class);
+                intent.putExtra("_id", _id);
+                intent.putExtra("_nombre", _nombre);
+                intent.putExtra("_categoria", _categoria);
+                intent.putExtra("_descripcion", _descripcion);
+                intent.putExtra("_path", _path);
+                intent.putExtra("_precio", _precio);
+                intent.putExtra("_local", _local);
+                startActivity(intent);
+
+            }
+        });
 
 
         //carga mas items
@@ -59,7 +87,7 @@ public class UltimosFragment extends android.support.v4.app.Fragment {
             }
         });
 
-        FloatingActionButton fab = (FloatingActionButton)root.findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) root.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

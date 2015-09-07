@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ogomez.tecnoshop.app.Objects.ItemP;
 import com.ogomez.tecnoshop.app.Objects.ItemProduct;
@@ -41,7 +42,7 @@ public class AdapterItems extends ArrayAdapter<ItemP> {
     }
 
     @Override
-    public View getView(int i, View view, ViewGroup parent) {
+    public View getView(final int i, View view, ViewGroup parent) {
         LayoutInflater inflater = context.getLayoutInflater();
 
         View rowView = inflater.inflate(R.layout.item_row, null);
@@ -67,6 +68,7 @@ public class AdapterItems extends ArrayAdapter<ItemP> {
 
         return rowView;
     }
+
 
 
 }

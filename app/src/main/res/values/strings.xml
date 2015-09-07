@@ -20,5 +20,6 @@
         <item>Musica , peliculas y series</item>
         <item>Servicios</item>
     </string-array>
+    <string name="title_activity_detail_screen">Detalles</string>
 
 </resources>
