@@ -206,7 +206,7 @@
                             android:background="@drawable/phone_up" />
 
                         <Button
-                            android:id="@+id/btn_correo"
+                            android:id="@+id/btnWhatsap"
                             android:layout_width="80dp"
                             android:layout_height="80dp"
                             android:layout_gravity="center"

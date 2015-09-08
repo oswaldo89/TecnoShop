@@ -11,6 +11,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <!-- Read Contacts from phone -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:allowBackup="true"
@@ -51,7 +53,11 @@
         <activity
             android:name=".app.Activities.DetailScreen"
             android:label="@string/title_activity_detail_screen"
-            android:theme="@style/AppThemeAction"></activity>
+            android:theme="@style/AppThemeAction">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"></action>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
