@@ -17,6 +17,16 @@ public class ItemP {
     String path;
     String inserted;
     int status;
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    String telefono;
     File img;
 
     public File getImg() {

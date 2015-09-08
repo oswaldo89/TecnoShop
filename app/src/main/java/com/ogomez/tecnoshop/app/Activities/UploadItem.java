@@ -41,7 +41,7 @@ public class UploadItem extends AppCompatActivity {
     static final int REQUEST_IMAGE_CAPTURE = 1;
     ImageView imgThumb;
     Button btn_guardar;
-    EditText txt_nombre,txt_descripcion,txt_precio,txt_local;
+    EditText txt_nombre,txt_descripcion,txt_precio,txt_local,txtTel;
     Spinner spn_categoria;
     String txt_categoria;
     File imgFile;
@@ -54,6 +54,7 @@ public class UploadItem extends AppCompatActivity {
         txt_descripcion = (EditText)findViewById(R.id.txt_descripcion);
         txt_precio = (EditText)findViewById(R.id.txt_precio);
         txt_local = (EditText)findViewById(R.id.txt_local);
+        txtTel = (EditText)findViewById(R.id.txtTelefono);
         spn_categoria = (Spinner)findViewById(R.id.spn_categoria);
 
 
@@ -95,6 +96,7 @@ public class UploadItem extends AppCompatActivity {
 
                         int _local = (!txt_local.getText().toString().equals("")) ? Integer.parseInt(txt_local.getText().toString()) : 0;
                         o.setLocal(_local);
+                        o.setTelefono(txtTel.getText().toString());
                         o.setImg(imgFile);
 
                         //crea el objeto y se lo enviamos al Api REST

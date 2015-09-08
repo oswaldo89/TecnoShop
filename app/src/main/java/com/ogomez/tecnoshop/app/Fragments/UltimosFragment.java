@@ -43,6 +43,7 @@ public class UltimosFragment extends android.support.v4.app.Fragment {
                 String _categoria = adpt.getItem(i).getCategoria();
                 String _descripcion = adpt.getItem(i).getDescripcion();
                 String _path = adpt.getItem(i).getPath();
+                String _telefono = adpt.getItem(i).getTelefono();
                 double _precio = adpt.getItem(i).getPrecio();
                 int _local = adpt.getItem(i).getLocal();
 
@@ -55,6 +56,7 @@ public class UltimosFragment extends android.support.v4.app.Fragment {
                 intent.putExtra("_path", _path);
                 intent.putExtra("_precio", _precio);
                 intent.putExtra("_local", _local);
+                intent.putExtra("_telefono", _telefono);
                 startActivity(intent);
 
             }

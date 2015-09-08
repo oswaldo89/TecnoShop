@@ -2,9 +2,11 @@ package com.ogomez.tecnoshop.app.Activities;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -34,6 +36,7 @@ public class DetailScreen extends AppCompatActivity {
         TextView _local = (TextView) findViewById(R.id._local);
         TextView _desc = (TextView) findViewById(R.id._desc);
         Button btnWpp = (Button) findViewById(R.id.btnWhatsap);
+        Button btn_llamar = (Button) findViewById(R.id.btn_llamar);
 
 
         //Trae parametros de la lista anterior
@@ -43,6 +46,7 @@ public class DetailScreen extends AppCompatActivity {
         String mcatego = extras.getString("_categoria");
         int mLocal = extras.getInt("_local");
         String mDesc = extras.getString("_descripcion");
+        final String mTel = extras.getString("_telefono");
 
 
         //asignacion de valores
@@ -56,7 +60,22 @@ public class DetailScreen extends AppCompatActivity {
         btnWpp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openWhatsappContact("8120392634");
+                if (mTel != null && !mTel.isEmpty()) {
+                    openWhatsappContact(mTel);
+                } else {
+                    Snackbar.make(findViewById(android.R.id.content), "Este producto no tiene telefono agregado", Snackbar.LENGTH_LONG).show();
+                }
+            }
+        });
+
+        btn_llamar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mTel != null && !mTel.isEmpty()) {
+                    openTehelphoneService(mTel);
+                } else {
+                    Snackbar.make(findViewById(android.R.id.content), "Este producto no tiene telefono agregado", Snackbar.LENGTH_LONG).show();
+                }
             }
         });
     }
@@ -68,6 +87,12 @@ public class DetailScreen extends AppCompatActivity {
         i.putExtra("sms_body", "Aplicacion TecnoShop");
         i.setPackage("com.whatsapp");
         startActivity(i);
+    }
+
+    void openTehelphoneService(String number) {
+        Intent callIntent = new Intent(Intent.ACTION_VIEW);
+        callIntent.setData(Uri.parse("tel:" + number));
+        startActivity(callIntent);
     }
 
 

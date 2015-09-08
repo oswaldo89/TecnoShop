@@ -33,6 +33,7 @@ public class Upload {
         params.put("descripcion", ob.getDescripcion());
         params.put("precio", ob.getPrecio());
         params.put("local", ob.getLocal());
+        params.put("telefono", ob.getTelefono());
         try {
             params.put("img", ob.getImg());
         }catch(Exception e){
