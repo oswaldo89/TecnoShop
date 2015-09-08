@@ -99,11 +99,6 @@ public class Login extends Activity implements GoogleApiClient.ConnectionCallbac
         loginButton.setCompoundDrawablePadding(Login.this.getResources().getDimensionPixelSize(R.dimen.fb_margin_override_textpadding));
         loginButton.setPadding(Login.this.getResources().getDimensionPixelSize(R.dimen.fb_margin_override_lr), Login.this.getResources().getDimensionPixelSize(R.dimen.fb_margin_override_top), 0, Login.this.getResources().getDimensionPixelSize(R.dimen.fb_margin_override_bottom));
 
-        TextView titleApp = (TextView) findViewById(R.id.titleApp);
-        Typeface face = Typeface.createFromAsset(getAssets(), "fonts/robotoBold.ttf");
-        titleApp.setTypeface(face);
-
-
         callbackManager = CallbackManager.Factory.create();
 
         loginButton.setReadPermissions(Arrays.asList("public_profile, email, user_birthday"));
@@ -143,12 +138,12 @@ public class Login extends Activity implements GoogleApiClient.ConnectionCallbac
 
             @Override
             public void onCancel() {
-                Toast.makeText(Login.this, "Inicio de sesión cancelado", Toast.LENGTH_LONG).show();
+                Toast.makeText(Login.this, "Inicio de sesiï¿½n cancelado", Toast.LENGTH_LONG).show();
             }
 
             @Override
             public void onError(FacebookException e) {
-                Toast.makeText(Login.this, "Inicio de sesión fallído", Toast.LENGTH_LONG).show();
+                Toast.makeText(Login.this, "Inicio de sesiï¿½n fallï¿½do", Toast.LENGTH_LONG).show();
             }
 
         });

@@ -61,7 +61,14 @@ public class AdapterItems extends ArrayAdapter<ItemP> {
         //categoria ala que pertenece
         _nombreItem.setText(cat.get(i).getNombre());
         _categoryItem.setText(cat.get(i).getCategoria());
-        _localNumber.setText("Local :: " + cat.get(i).getLocal());
+
+        if(cat.get(i).getLocal() == 0)
+        {
+            _localNumber.setText("Vendedor independiente");
+        }else{
+            _localNumber.setText("Local :: " + cat.get(i).getLocal());
+        }
+
 
         //crea la imagen
         Picasso.with(context).load(Utils.URL_IMG + cat.get(i).getPath()).into(_imagenItem);

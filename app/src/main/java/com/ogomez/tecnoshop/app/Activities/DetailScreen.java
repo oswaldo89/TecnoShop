@@ -54,7 +54,13 @@ public class DetailScreen extends AppCompatActivity {
         _titulo.setText(mTitulo);
         _precio.setText(" $" + String.valueOf(mPrecio));
         _catego.setText(mcatego);
-        _local.setText(String.valueOf(mLocal));
+
+        if(mLocal == 0){
+            _local.setText("Vendedor independiente");
+        }else{
+            _local.setText(String.valueOf(mLocal));
+        }
+
         _desc.setText(mDesc);
 
         btnWpp.setOnClickListener(new View.OnClickListener() {
