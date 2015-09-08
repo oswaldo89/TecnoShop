@@ -62,29 +62,12 @@ public class DetailScreen extends AppCompatActivity {
     }
 
     void openWhatsappContact(String number) {
-        /*
-        Uri uri = Uri.parse("smsto:" + number);
-        Intent i = new Intent(Intent.ACTION_SENDTO, uri);
-        i.setPackage("com.whatsapp");
-        startActivity(Intent.createChooser(i, ""));
-        */
 
         Uri uri = Uri.parse("smsto:" + number);
         Intent i = new Intent(Intent.ACTION_SENDTO, uri);
-        i.putExtra("sms_body", "Que tal, este mensaje es enviado desde la aplicacion TecnoShop");
+        i.putExtra("sms_body", "Aplicacion TecnoShop");
         i.setPackage("com.whatsapp");
         startActivity(i);
-
-
-        /*
-        Uri uri = Uri.parse("smsto:" + number);
-        Intent i = new Intent(Intent.ACTION_SENDTO, Uri.parse("content://com.android.contacts/data/" + uri));
-        i.setType("text/plain");
-        i.setPackage("com.whatsapp");           // so that only Whatsapp reacts and not the chooser
-        i.putExtra(Intent.EXTRA_SUBJECT, "Subject");
-        i.putExtra(Intent.EXTRA_TEXT, "I'm the body.");
-        startActivity(i);
-        */
     }
 
 
