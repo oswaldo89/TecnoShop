@@ -144,9 +144,11 @@ public class HomeTabs extends AppCompatActivity implements GoogleApiClient.Conne
 
             @Override
             public void onSearch(String searchTerm) {
+                search.setSearchString("");
                 Intent i = new Intent(HomeTabs.this,SearchScreen.class);
-                i.putExtra("searchTerm",searchTerm);
+                i.putExtra("searchTerm", searchTerm);
                 startActivity(i);
+                finish();
             }
 
             @Override
@@ -178,7 +180,8 @@ public class HomeTabs extends AppCompatActivity implements GoogleApiClient.Conne
     }
     protected void closeSearch() {
         search.hideCircularly(this);
-        if(search.getSearchText().isEmpty())toolbar.setTitle("TecnoShop");
+        if(search.getSearchText().isEmpty())
+            toolbar.setTitle("TecnoShop");
     }
 
 

@@ -151,6 +151,8 @@ public class ItemsMore {
                 try {
 
                     json_resp = Utils.byteToJson(response);
+                    Log.v("LOG","onSuccess :: "+json_resp);
+
                     Gson gson = new Gson();
 
                     Type listType = new TypeToken<List<ItemP>>() {
@@ -172,8 +174,11 @@ public class ItemsMore {
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] errorResponse, Throwable e) {
                 // called when response HTTP status is "4XX" (eg. 401, 403, 404)
+                mRecyclerView.hideMoreProgress();
+
                 try {
                     json_resp = Utils.byteToJson(errorResponse);
+                    Log.v("LOG","onFailure :: "+json_resp);
                 } catch (Exception ex) {
                     //Log.e("REST", ex.getMessage());
                 }

@@ -99,12 +99,22 @@ public class SearchScreen extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                // app icon in action bar clicked; goto parent activity.
-                this.finish();
+                Intent i = new Intent(SearchScreen.this,HomeTabs.class);
+                i.putExtra("searchTerm", searchTerm);
+                startActivity(i);
+                finish();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent i = new Intent(SearchScreen.this,HomeTabs.class);
+        i.putExtra("searchTerm", searchTerm);
+        startActivity(i);
+        finish();
+    }
 }

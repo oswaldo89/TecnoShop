@@ -48,10 +48,12 @@ public class Login extends Activity implements GoogleApiClient.ConnectionCallbac
         //checa si esta logueado
         prefs = getSharedPreferences("LOGIN", Context.MODE_PRIVATE);
         String email = prefs.getString("email", "");
+        String id_user = prefs.getString("id_user", "");
+
         Log.v("LOGIN","onCreate");
         Log.v("LOGIN",email);
-        if(!email.equals("0")) {
-            Log.v("LOGIN","Lanza la vista HOME");
+        if(!email.equals("0") && !id_user.equals("")) {
+            Log.v("LOGIN","Lanza la vista HOME : user"+id_user);
             StartHome();
         }
 
