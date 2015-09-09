@@ -61,7 +61,12 @@
         <activity
             android:name=".app.Activities.FindByCategory"
             android:label="@string/title_activity_find_by_category"
-            android:theme="@style/AppThemeAction"></activity>
+            android:theme="@style/AppThemeAction" />
+        <activity
+            android:name=".app.Activities.SearchScreen"
+            android:label="@string/title_activity_search_screen"
+            android:theme="@style/AppThemeAction"
+            android:windowSoftInputMode="stateHidden"></activity>
     </application>
 
 </manifest>

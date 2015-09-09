@@ -22,5 +22,6 @@
     </string-array>
     <string name="title_activity_detail_screen">Detalles</string>
     <string name="title_activity_find_by_category">Categoría</string>
+    <string name="title_activity_search_screen">Busqueda por voz</string>
 
 </resources>

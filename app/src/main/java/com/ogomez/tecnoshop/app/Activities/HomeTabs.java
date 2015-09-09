@@ -144,8 +144,9 @@ public class HomeTabs extends AppCompatActivity implements GoogleApiClient.Conne
 
             @Override
             public void onSearch(String searchTerm) {
-                Toast.makeText(HomeTabs.this, searchTerm + " Busqueda", Toast.LENGTH_LONG).show();
-                toolbar.setTitle(searchTerm);
+                Intent i = new Intent(HomeTabs.this,SearchScreen.class);
+                i.putExtra("searchTerm",searchTerm);
+                startActivity(i);
             }
 
             @Override
