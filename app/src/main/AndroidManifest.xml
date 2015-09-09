@@ -55,9 +55,13 @@
             android:label="@string/title_activity_detail_screen"
             android:theme="@style/AppThemeAction">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"></action>
+                <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".app.Activities.FindByCategory"
+            android:label="@string/title_activity_find_by_category"
+            android:theme="@style/AppThemeAction"></activity>
     </application>
 
 </manifest>
